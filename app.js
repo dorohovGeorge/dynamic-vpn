@@ -4,7 +4,7 @@ var port = 3000
 const fetch = (...args) =>
   import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-const url = 'http://localhost:8090/'
+const url = 'http://vpn.94.103.89.23.sslip.io'
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
