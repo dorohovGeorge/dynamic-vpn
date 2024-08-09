@@ -13,6 +13,7 @@ app.use((req, res, next) => {
     res.append('Access-Control-Allow-Credentials', true)
     res.append('Access-Control-Expose-Headers', ['*'])
     res.append('content-type', 'text/plain')
+    req.connection.setTimeout(2*60*1000)
     next();
 });
 
@@ -25,13 +26,12 @@ app.get('/key/:id', async (req, res) => {
     console.log(str)
     fetch(str, options)
 		.then(res => res.text())
-		.then(text => console.log(text))
 		.catch(err => console.error('error:' + err));
 
     	try {
             let response = await fetch(str, options);
-            response = await response.text();
-            res.send(response)
+            let ans = await response.text();
+            res.send(ans)
         } catch (err) {
             console.log(err);
             res.status(500).json({msg: `Internal Server Error.`});
