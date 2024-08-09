@@ -38,27 +38,27 @@ app.get('/key/:id', async (req, res) => {
         }    
 })
 
-app.get('/allConnections', async (req, res) => {
-        const options = {
-            method: 'GET'
-        };
-        var part = 'allConnections'
-        var str = url + part
-        console.log(str)
-        fetch(str, options)
-            .then(res => res.text())
-            .then(text => console.log(text))
-            .catch(err => console.error('error:' + err));
+// app.get('/allConnections', async (req, res) => {
+//         const options = {
+//             method: 'GET'
+//         };
+//         var part = 'allConnections'
+//         var str = url + part
+//         console.log(str)
+//         fetch(str, options)
+//             .then(res => res.text())
+//             .then(text => console.log(text))
+//             .catch(err => console.error('error:' + err));
     
-            try {
-                let response = await fetch(str, options);
-                response = await response.text();
-                res.send(response)
-            } catch (err) {
-                console.log(err);
-                res.status(500).json({msg: `Internal Server Error.`});
-            }    
-    })
+//             try {
+//                 let response = await fetch(str, options);
+//                 response = await response.text();
+//                 res.send(response)
+//             } catch (err) {
+//                 console.log(err);
+//                 res.status(500).json({msg: `Internal Server Error.`});
+//             }    
+//     })
 
 
 
