@@ -8,7 +8,7 @@ const url = 'http://vpn.94.103.89.23.sslip.io/'
 
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['*']);
-    res.append('Access-Control-Allow-Methods', 'GET,PUT,OPTIONS');
+    res.append('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.append('Access-Control-Allow-Headers', ['Content-Type', 'Authorization']);
     res.append('Access-Control-Allow-Credentials', true)
     res.append('Access-Control-Expose-Headers', ['*'])
