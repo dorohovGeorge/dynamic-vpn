@@ -4,7 +4,7 @@ var port = 3000
 const fetch = (...args) =>
   import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-const url = 'http://94.103.89.23:8090/'
+const url = 'http://94.103.89.23:8090/904b8e1b-eb1e-48f8-b127-16ade06794c0/'
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
